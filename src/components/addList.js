@@ -19,6 +19,8 @@ function AddItem(props){
            firstName : firstNameval,
            lastName : lastNameval
        }
+       props.itemsList.push(newStudent)
+       props.addtoList([...props.itemsList])
     }
     return(
         <div >

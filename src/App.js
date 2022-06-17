@@ -1,15 +1,16 @@
  import React,{useState, useEffect} from 'react'
 import List from './components/list'
 import AddItem from './components/addList'
-import newStudent from './components/addList'
+//import newStudent from './components/addList'
+
+const studentsList = [
+  {firstName : "Reshitha", lastName : "Pathi"},
+  {firstName : "Rivansh", lastName : "Kilari"},
+  {firstName : "Skandhana", lastName : "Pathi"},
+  {firstName : "Kalyani", lastName : "Payyavula"},
+]
 
 function App(){
-  const studentsList = [
-    {firstName : "Reshitha", lastName : "Pathi"},
-    {firstName : "Rivansh", lastName : "Kilari"},
-    {firstName : "Skandhana", lastName : "Pathi"},
-    {firstName : "Kalyani", lastName : "Payyavula"},
-  ]
 
   const [list, setList] = useState(studentsList)
 
@@ -18,8 +19,8 @@ function App(){
   }
   
   return(
-    <div>
-     <AddItem itemsList={list}></AddItem>
+    <div> 
+     <AddItem addtoList={setList} itemsList={list}></AddItem>
     <div>
       {list.map((ele, k) =>{
      return <List item={ele} 
