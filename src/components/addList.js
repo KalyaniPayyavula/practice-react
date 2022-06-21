@@ -4,6 +4,7 @@ import Popup from 'reactjs-popup';
 import PropTypes from 'prop-types'
 
 function AddItem(props){
+
     let firstNameval = "";
     let lastNameval = "";
     function handleFirstName(e){
@@ -25,17 +26,17 @@ function AddItem(props){
     }
     return(
         <div >
-    <Popup trigger={<button onClick={props.onClick} className='addItemStyle'>+</button>} position="bottom rightS">
+    <Popup trigger={<button onClick={props.onClick} id="popupId" className='addItemStyle'>+</button>} position="bottom rightS">
       <div id="popupStyle">
       <div>
      <span>Enter First Name :</span>
-     <input onChange={handleFirstName}></input>
+     <input onChange={handleFirstName} id="firstnameId"></input>
    </div>
    <div>
 <span>Enter Last Name :</span>
-     <input onChange={handleLastName}></input>
+     <input onChange={handleLastName} id="lastnameId"></input>
   </div>
-  <button onClick={addItemToList}>Add</button>
+  <button onClick={addItemToList} id="clickId">Add</button>
       </div>  
     </Popup>
   </div>

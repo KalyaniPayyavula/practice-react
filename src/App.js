@@ -27,7 +27,7 @@ function App(){
      key={`${k} ${ele.firstName} ${ele.lastName}`}
      onClick = {deleteListItem}
     ></List>
-      })}
+      })}     
     </div>
     </div>
   )
