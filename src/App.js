@@ -1,7 +1,7 @@
- import React,{useState, useEffect} from 'react'
+ import React,{useState} from 'react'
 import List from './components/list'
 import AddItem from './components/addList'
-//import newStudent from './components/addList'
+import PropTypes from 'prop-types'
 
 const studentsList = [
   {firstName : "Reshitha", lastName : "Pathi"},
@@ -33,3 +33,7 @@ function App(){
   )
 }
   export default App;
+
+  App.propTypes = {
+    list : PropTypes.array
+  }

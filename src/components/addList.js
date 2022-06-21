@@ -1,7 +1,8 @@
 import React from 'react'
 import './list.css'
 import Popup from 'reactjs-popup';
-let newStudent;
+import PropTypes from 'prop-types'
+
 function AddItem(props){
     let firstNameval = "";
     let lastNameval = "";
@@ -15,7 +16,7 @@ function AddItem(props){
         return lastNameval
        }
     function addItemToList(e){
-        newStudent = {
+      let  newStudent = {
            firstName : firstNameval,
            lastName : lastNameval
        }
@@ -41,4 +42,7 @@ function AddItem(props){
     )
     }
 export default AddItem;
-export {newStudent}
+
+AddItem.propTypes = {
+  itemsList: PropTypes.array
+}

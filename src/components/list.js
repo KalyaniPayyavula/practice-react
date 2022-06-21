@@ -1,7 +1,8 @@
 import React from 'react'
 import './list.css'
-function List(props){
+import PropTypes from 'prop-types'
 
+function List(props){
 return(
   <div className='listStyle'>
     <span>{props.item.firstName}</span>
@@ -11,3 +12,6 @@ return(
 )
 }
 export default List
+List.propTypes = {
+  name: PropTypes.string
+}
