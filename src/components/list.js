@@ -1,17 +1,19 @@
 import React from 'react'
 import './list.css'
 import PropTypes from 'prop-types'
-
-function List(props){
+function List({item,onClick}){
 return(
-  <div className='listStyle' id="addednameId" key={props.key}>
-    <span>{props.item.firstName}</span>
-    <span>{props.item.lastName}</span>
-    <button name={props.item.firstName} id="deleteId" onClick={props.onClick}>DELETE</button>
+  <div className='listStyle' id="addednameId">
+    <span>{item.firstName}</span>
+    <span>{item.lastName}</span>
+    <button name={item.firstName} id="deleteId" onClick={onClick}>DELETE</button>
 </div>
-)
-}
+)}
 export default List
 List.propTypes = {
-  name: PropTypes.string
-}
+  item : PropTypes.shape({
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired
+  }),
+  onClick: PropTypes.func.isRequired
+  }

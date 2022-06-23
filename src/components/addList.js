@@ -3,7 +3,7 @@ import './list.css'
 import Popup from 'reactjs-popup';
 import PropTypes from 'prop-types'
 
-function AddItem(props){
+function AddItem({itemsList,addtoList, onClick}){
 
     let firstNameval = "";
     let lastNameval = "";
@@ -21,12 +21,12 @@ function AddItem(props){
            firstName : firstNameval,
            lastName : lastNameval
        }
-       props.itemsList.push(newStudent)
-       props.addtoList([...props.itemsList])
+       itemsList.push(newStudent)
+       addtoList([...itemsList])
     }
     return(
         <div >
-    <Popup trigger={<button onClick={props.onClick} id="popupId" className='addItemStyle'>+</button>} position="bottom rightS">
+    <Popup trigger={<button onClick={onClick} id="popupId" className='addItemStyle'>+</button>} position="bottom rightS">
       <div id="popupStyle">
       <div>
      <span>Enter First Name :</span>
@@ -45,5 +45,6 @@ function AddItem(props){
 export default AddItem;
 
 AddItem.propTypes = {
-  itemsList: PropTypes.array
+  itemsList: PropTypes.array,
+  addtoList: PropTypes.func
 }
