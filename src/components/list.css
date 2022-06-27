@@ -1,0 +1,27 @@
+.listStyle{
+    display: flex;
+    flex-direction: row;
+    border :1px solid blue;
+    width: 15%;
+    margin-left: 40%;
+    padding: 1%;
+    font-style: italic;
+    color: red;
+    text-align: center; 
+}
+
+.addItemStyle{
+    background-color: green;
+    margin-left: 45%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 1% 0% 1% 48%;
+    width: 3%;
+    height: 30px;
+}
+
+#popupStyle{
+    margin-left: 90%;
+    width: 80%;
+    padding: 20%;
+}

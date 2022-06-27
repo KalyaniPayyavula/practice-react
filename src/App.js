@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+ import React,{useState} from 'react'
+import List from './components/list'
+import AddItem from './components/addList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const studentsList = [
+  {firstName : "Reshitha", lastName : "Pathi"},
+  {firstName : "Rivansh", lastName : "Kilari"},
+  {firstName : "Skandhana", lastName : "Pathi"},
+  {firstName : "Kalyani", lastName : "Payyavula"},
+]
+
+function App(){
+
+  const [list, setList] = useState(studentsList)
+
+  function deleteListItem(e){
+    setList(list.filter(ele => ele.firstName !== e.target.name ))   
+  }
+  
+  return(
+    <div> 
+     <AddItem addtoList={setList} itemsList={list}></AddItem>
+    <div>
+      {list.map((ele, k) =>{
+     return <List item={ele} 
+     key={`${k} ${ele.firstName} ${ele.lastName}`}
+     onClick = {deleteListItem}
+    ></List>
+      })}     
     </div>
-  );
+    </div>
+  )
 }
-
-export default App;
+  export default App;
