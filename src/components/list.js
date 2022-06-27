@@ -10,6 +10,7 @@ return(
 </div>
 )}
 export default List
+
 List.propTypes = {
   item : PropTypes.shape({
   firstName: PropTypes.string.isRequired,

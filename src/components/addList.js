@@ -45,6 +45,6 @@ function AddItem({itemsList,addtoList, onClick}){
 export default AddItem;
 
 AddItem.propTypes = {
-  itemsList: PropTypes.array,
-  addtoList: PropTypes.func
+  itemsList: PropTypes.array.isRequired,
+  addtoList: PropTypes.func.isRequired
 }
